@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "*** Welcome ***"
+
+sudo su postgres
+psql
+
+\l
+
+
+pg_dump -U postgres > restored_db 
+
+psql restored_db < mydb3_backup.bakpsql
+
